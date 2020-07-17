@@ -1,0 +1,23 @@
+.spacer {
+    flex: 1;
+  }
+  
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  background-color: #536B85;
+  color: white;
+  font-weight: 600;
+  font-size: 100%;
+  font-family: 'Neucha',cursive;
+  position: relative;
+  background-image: url('../assets/img/rick_pixel.png');
+  // background-image: url('https://i.pinimg.com/236x/28/4e/3f/284e3f10fc09149ce023fa5041299176.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}

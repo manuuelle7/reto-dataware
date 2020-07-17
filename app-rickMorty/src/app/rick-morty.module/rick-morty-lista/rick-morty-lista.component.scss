@@ -1,0 +1,126 @@
+.contenedor-principal {
+    // background-image: url('../../../assets/img/estrellas.gif');
+    background-color: #1e2324;
+    background-size: initial;
+    position: relative;
+}
+.contenedor-busqueda {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    display: grid;
+    align-items: center;
+    // background-color: #2d4f545e;
+    background-image: url('../../../assets/img/estrellas.gif');
+    color: white;
+    font-weight: 600;
+    font-size: 150%;
+    font-family: 'Neucha',cursive;
+    background-size: contain;
+    position: relative;
+    justify-content: center;
+}
+.contenedor-paginado {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 150%;
+    font-family: 'Neucha',cursive;
+    background-size: contain;
+    position: relative;
+    place-content: flex-end;
+    // background-image: url('../../../assets/img/estrellas.gif');
+}
+.contenedor-cards {
+    // background-image: url('../../../assets/img/estrellas.gif');
+    // background-color: #8196999c;
+    background-color: #1e2324;
+    background-size: initial;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.contenedor-card {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-height: 30rem;
+    max-width: 20rem;
+    background-image: url('../../../assets/img/lineas_back.png');
+    background-color: #8196999c;
+    background-size: cover;
+    transition: transform .2s; 
+    }
+    .contenedor-card:hover {
+        transform: scale(1.05); 
+        }
+
+.contenedor-imagen {
+    align-items: center;
+    height: 20rem;
+    padding: inherit;
+    border: .5rem solid transparent;
+    border-color: rgba(153, 205, 50, 0.26);
+    }
+
+h5 {
+    font-family: 'Neucha',cursive;
+    font-weight: bold;
+}
+h4 {
+    font-family: 'Neucha',cursive;
+    font-weight: bold;
+    color: white;
+}
+
+.input-datos {
+    font-weight: 600;
+    font-family: 'Neucha',cursive;
+    background-color: #469eaa;
+    font-size: 100%;
+    margin: .2rem;
+    color: white;
+    
+}
+
+.input-datos::placeholder {
+    color: white;
+    text-align: center;
+}
+
+.contenedor-footer {
+    // background-image: url('../../../assets/img/estrellas.gif');
+    background-color: #0f11119c;
+    background-size: initial;
+    position: relative;
+    justify-content: center;
+}
+
+.input-buscar {
+    text-align: center;
+    font-size: 110%;
+    background-color: #83ced4d3;   
+    color: white; 
+}
+.input-buscar::placeholder {
+    color: #c3d3d3;
+}
+
+.input-paginas {
+    text-align: center;
+    background-color: #3a5972d3;    
+}
+.input-paginas::placeholder {
+    color:white
+}

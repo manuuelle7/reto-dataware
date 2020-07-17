@@ -1,0 +1,56 @@
+<div mdbModal #personajeDetalle="mdbModal" class="modal fade overflow-auto" tabindex="-1" role="dialog"
+     aria-labelledby="myBasicModalLabel" aria-hidden="true" [config]="{backdrop: true, ignoreBackdropClick: false}">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content contenedor-card justify-content-center">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="personajeDetalle.hide()">
+          <span aria-hidden="true">X</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">{{personaje.name}}</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="row flex-center">          
+          <div class="view overlay waves-light contenedor-imagen" mdbWavesEffect>
+            <img [src]="personaje.image" [alt]="">
+          </div>
+          <div class="row  contenedor-datos">
+            <div class="col-3 col-lg-2"> Especie </div>
+            <div class="col-9 col-lg-10">
+              <input type="text" id="especie" class="form-control input-datos" 
+                placeholder="{{personaje.species}}"
+               readonly mdbInput>
+            </div>
+
+            <div class="col-3 col-lg-2"> Genero </div>
+            <div class="col-9 col-lg-10">
+              <input type="text" id="genero" class="form-control input-datos" 
+                placeholder="{{personaje.gender}}"
+               readonly mdbInput>
+            </div>
+            <div class="col-3 col-lg-2"> Estatus </div>
+            <div class="col-9 col-lg-10">
+              <input type="text" id="estatus" class="form-control input-datos" 
+                placeholder="{{personaje.status}}"
+               readonly mdbInput>
+            </div>
+
+            <div class="col-3 col-lg-2"> Origen </div>
+            <div class="col-9 col-lg-10">
+              <input type="text" id="origen" class="form-control input-datos" 
+                placeholder="{{personaje.origin?.name}}"
+               readonly mdbInput>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-footer justify-content-center">
+        <button type="button" (click)="personajeDetalle.hide();" class="btn btn-danger waves-light btn-md"
+                aria-label="Close" mdbWavesEffect>
+                <mdb-icon fas icon="times" size="2x"></mdb-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

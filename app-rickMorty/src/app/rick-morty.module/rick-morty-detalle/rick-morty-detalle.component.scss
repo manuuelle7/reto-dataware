@@ -1,0 +1,43 @@
+.contenedor-card {
+    justify-content: center;
+    font-weight: 600;
+    font-family: 'Neucha',cursive;
+    background-image: url('../../../assets/img/lineas_back.png');
+    background-color: #819699;
+    background-size: cover;
+    }
+.contenedor-imagen {
+    align-items: center;
+    height: 20rem;
+    padding: inherit;
+    border: .5rem solid transparent;
+    border-color: rgba(153, 205, 50, 0.26);
+    }
+.contenedor-datos {
+    font-weight: 600;
+    // font-family: 'Neucha',cursive;
+    // background-color: #469eaa;
+    font-size: 110%;
+    margin: .2rem;
+    color: white;
+}
+.contenedor-datos ::placeholder {
+    text-align: center;
+}
+h4 {
+    color: white;
+    font-size: 150%;
+    font-weight: bold;
+}
+.input-datos {
+    font-weight: 600;
+    font-family: 'Neucha',cursive;
+    background-color: #469eaa;
+    font-size: 100%;
+    margin: .2rem;
+    color: white;
+    
+}
+.input-datos::placeholder {
+    color: white;
+}

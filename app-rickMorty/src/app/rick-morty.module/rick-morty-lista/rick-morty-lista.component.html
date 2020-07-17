@@ -1,0 +1,121 @@
+<div class=" align-items-center contenedor-principal" #inicio>
+  <div class="contenedor-busqueda">
+    <div class="col-12 col-lg-12">
+      <img width="350"
+      height="240"
+      src="../assets/img/rick_morty.png"/>
+    </div>
+    <div class="row col-12 col-lg-12 mb-2 mt-2 justify-content-center">
+      <input type="text"  id="nombre" class="form-control input-buscar ml-4" 
+        placeholder="Buscar por nombre"
+        [(ngModel)]="nombrePersonaje"  mdbTooltip="Busca tu personaje" placement="right"
+        (keyup)="buscaPorNombre()" mdbInput>        
+    </div>
+  </div>
+  
+  <div class="row col-12 col-lg-12 mt-2 contenedor-paginado">
+    <div class="row col-12 col-lg-3 mr-lg-5">
+      <input type="text" id="nombre" class="form-control input-paginas" 
+        placeholder="Página: {{paginaActual}} de {{personajesLista.info.pages}}"
+        readonly mdbInput>        
+    </div>
+    
+      <button type="button" class="btn btn-sm mdb-color text-white waves-light mr-2" (click)="pagInicial()"
+      mdbWavesEffect  mdbTooltip="Página Inicial" placement="top"
+      [disabled]="!personajesLista.results || personajesLista.results.length === 0 || personajesLista.info.prev === null">
+        |<
+      </button>
+      <button type="button" class="btn btn-sm mdb-color text-white waves-light mr-2" (click)="pagAnterior()"
+              mdbWavesEffect mdbTooltip="Página Anterior" placement="top"
+              [disabled]="!personajesLista.results || personajesLista.results.length === 0 || personajesLista.info.prev === null">
+        <<
+      </button>
+      <button type="button" class="btn btn-sm mdb-color text-white waves-light mr-2" (click)="pagSiguiente()"
+              mdbWavesEffect  mdbTooltip="Página Siguiente" placement="top"
+              [disabled]="(!personajesLista.results || personajesLista.results.length === 0 || personajesLista.info.next === null)">
+        >>
+      </button>
+      
+  </div>
+
+  <div class="col-12 col-lg-12 card mt-3 contenedor-cards">
+    <div class="row col-12 col-lg-12 flex-center">
+    <div *ngFor="let personaje of auxPersonajesLista; let i of index">
+        <!-- Card -->
+        <mdb-card (click)="detallePersonaje(personaje)" mdbTooltip="{{personaje.name}}" placement="right"
+        class="contenedor-card ml-2 mr-2">
+  
+          <div class="view overlay waves-light contenedor-imagen" mdbWavesEffect>
+            <!-- Card img -->
+            <mdb-card-img [src]="personaje.image" [alt]="i"></mdb-card-img>
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+          <!--Card content-->
+          <mdb-card-body >
+            <!--Title-->
+            <mdb-card-title>
+              <h5>{{personaje.name}}</h5>
+            </mdb-card-title>
+      
+            <!--Text-->
+            <mdb-card-text > 
+              <div class="row">
+                <div class="col-12">
+                  <input type="text" id="especies" class="form-control input-datos" 
+                    placeholder="{{personaje.species}}"
+                    readonly mdbInput>
+                </div>
+                <div class="col-lg-12">
+                  <input type="text" id="estatus" class="form-control input-datos" 
+                    placeholder="{{personaje.status}}"
+                    readonly mdbInput>        
+                </div>
+              </div>
+            </mdb-card-text>
+          </mdb-card-body>
+        </mdb-card>
+    </div>
+    <div class="md-form mt-5 mb-5" *ngIf="auxPersonajesLista.length === 0"> <h4>No se encontraron personajes en la página con "{{nombrePersonaje}}" </h4></div>
+    </div>
+  </div>
+
+  <div class="row col-12 col-lg-12 mt-2 contenedor-paginado">
+    <div class="row col-12 col-lg-3 mr-lg-5">
+      <input type="text" id="nombre" class="form-control input-paginas" 
+        placeholder="Página: {{paginaActual}} de {{personajesLista.info.pages}}"
+        readonly mdbInput>        
+    </div>
+    
+      <button type="button" class="btn btn-sm mdb-color text-white waves-light" (click)="pagInicial()"
+      mdbWavesEffect
+      [disabled]="!personajesLista.results || personajesLista.results.length === 0 || personajesLista.info.prev === null">
+        |<
+      </button>
+      <button type="button" class="btn btn-sm mdb-color text-white waves-light" (click)="pagAnterior()"
+              mdbWavesEffect
+              [disabled]="!personajesLista.results || personajesLista.results.length === 0 || personajesLista.info.prev === null">
+        <<
+      </button>
+      <button type="button" class="btn btn-sm mdb-color text-white waves-light" (click)="pagSiguiente()"
+              mdbWavesEffect
+              [disabled]="(!personajesLista.results || personajesLista.results.length === 0 || personajesLista.info.next === null)">
+        >>
+      </button>
+      
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small contenedor-footer">  
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">Manuel Islas - 2020
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+ <app-rick-morty-detalle [personaje]="personaje"></app-rick-morty-detalle>
