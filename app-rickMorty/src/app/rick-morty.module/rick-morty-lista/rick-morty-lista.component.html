@@ -9,7 +9,7 @@
       <input type="text"  id="nombre" class="form-control input-buscar ml-4" 
         placeholder="Buscar por nombre"
         [(ngModel)]="nombrePersonaje"  mdbTooltip="Busca tu personaje" placement="right"
-        (keyup)="buscaPorNombre()" mdbInput>        
+        (keyup)="buscaPorNombre()" (blur)="buscaPorNombre()" mdbInput>        
     </div>
   </div>
   
@@ -88,18 +88,18 @@
         readonly mdbInput>        
     </div>
     
-      <button type="button" class="btn btn-sm mdb-color text-white waves-light" (click)="pagInicial()"
-      mdbWavesEffect
+      <button type="button" class="btn btn-sm mdb-color text-white waves-light mr-2" (click)="pagInicial()"
+      mdbWavesEffect  mdbTooltip="Página Inicial" placement="top"
       [disabled]="!personajesLista.results || personajesLista.results.length === 0 || personajesLista.info.prev === null">
         |<
       </button>
-      <button type="button" class="btn btn-sm mdb-color text-white waves-light" (click)="pagAnterior()"
-              mdbWavesEffect
+      <button type="button" class="btn btn-sm mdb-color text-white waves-light mr-2" (click)="pagAnterior()"
+              mdbWavesEffect mdbTooltip="Página Anterior" placement="top"
               [disabled]="!personajesLista.results || personajesLista.results.length === 0 || personajesLista.info.prev === null">
         <<
       </button>
-      <button type="button" class="btn btn-sm mdb-color text-white waves-light" (click)="pagSiguiente()"
-              mdbWavesEffect
+      <button type="button" class="btn btn-sm mdb-color text-white waves-light mr-2" (click)="pagSiguiente()"
+              mdbWavesEffect  mdbTooltip="Página Siguiente" placement="top"
               [disabled]="(!personajesLista.results || personajesLista.results.length === 0 || personajesLista.info.next === null)">
         >>
       </button>
